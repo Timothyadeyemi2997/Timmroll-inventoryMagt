@@ -1,0 +1,1014 @@
+import type * as runtime from "@prisma/client/runtime/client";
+import type * as Prisma from "../internal/prismaNamespace.js";
+/**
+ * Model PurchaseSummary
+ *
+ */
+export type PurchaseSummaryModel = runtime.Types.Result.DefaultSelection<Prisma.$PurchaseSummaryPayload>;
+export type AggregatePurchaseSummary = {
+    _count: PurchaseSummaryCountAggregateOutputType | null;
+    _avg: PurchaseSummaryAvgAggregateOutputType | null;
+    _sum: PurchaseSummarySumAggregateOutputType | null;
+    _min: PurchaseSummaryMinAggregateOutputType | null;
+    _max: PurchaseSummaryMaxAggregateOutputType | null;
+};
+export type PurchaseSummaryAvgAggregateOutputType = {
+    totalPurchased: number | null;
+    changePercentage: number | null;
+};
+export type PurchaseSummarySumAggregateOutputType = {
+    totalPurchased: number | null;
+    changePercentage: number | null;
+};
+export type PurchaseSummaryMinAggregateOutputType = {
+    purchaseSummaryId: string | null;
+    totalPurchased: number | null;
+    changePercentage: number | null;
+    date: Date | null;
+};
+export type PurchaseSummaryMaxAggregateOutputType = {
+    purchaseSummaryId: string | null;
+    totalPurchased: number | null;
+    changePercentage: number | null;
+    date: Date | null;
+};
+export type PurchaseSummaryCountAggregateOutputType = {
+    purchaseSummaryId: number;
+    totalPurchased: number;
+    changePercentage: number;
+    date: number;
+    _all: number;
+};
+export type PurchaseSummaryAvgAggregateInputType = {
+    totalPurchased?: true;
+    changePercentage?: true;
+};
+export type PurchaseSummarySumAggregateInputType = {
+    totalPurchased?: true;
+    changePercentage?: true;
+};
+export type PurchaseSummaryMinAggregateInputType = {
+    purchaseSummaryId?: true;
+    totalPurchased?: true;
+    changePercentage?: true;
+    date?: true;
+};
+export type PurchaseSummaryMaxAggregateInputType = {
+    purchaseSummaryId?: true;
+    totalPurchased?: true;
+    changePercentage?: true;
+    date?: true;
+};
+export type PurchaseSummaryCountAggregateInputType = {
+    purchaseSummaryId?: true;
+    totalPurchased?: true;
+    changePercentage?: true;
+    date?: true;
+    _all?: true;
+};
+export type PurchaseSummaryAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which PurchaseSummary to aggregate.
+     */
+    where?: Prisma.PurchaseSummaryWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PurchaseSummaries to fetch.
+     */
+    orderBy?: Prisma.PurchaseSummaryOrderByWithRelationInput | Prisma.PurchaseSummaryOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the start position
+     */
+    cursor?: Prisma.PurchaseSummaryWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PurchaseSummaries from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PurchaseSummaries.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Count returned PurchaseSummaries
+    **/
+    _count?: true | PurchaseSummaryCountAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to average
+    **/
+    _avg?: PurchaseSummaryAvgAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to sum
+    **/
+    _sum?: PurchaseSummarySumAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the minimum value
+    **/
+    _min?: PurchaseSummaryMinAggregateInputType;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     *
+     * Select which fields to find the maximum value
+    **/
+    _max?: PurchaseSummaryMaxAggregateInputType;
+};
+export type GetPurchaseSummaryAggregateType<T extends PurchaseSummaryAggregateArgs> = {
+    [P in keyof T & keyof AggregatePurchaseSummary]: P extends '_count' | 'count' ? T[P] extends true ? number : Prisma.GetScalarType<T[P], AggregatePurchaseSummary[P]> : Prisma.GetScalarType<T[P], AggregatePurchaseSummary[P]>;
+};
+export type PurchaseSummaryGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.PurchaseSummaryWhereInput;
+    orderBy?: Prisma.PurchaseSummaryOrderByWithAggregationInput | Prisma.PurchaseSummaryOrderByWithAggregationInput[];
+    by: Prisma.PurchaseSummaryScalarFieldEnum[] | Prisma.PurchaseSummaryScalarFieldEnum;
+    having?: Prisma.PurchaseSummaryScalarWhereWithAggregatesInput;
+    take?: number;
+    skip?: number;
+    _count?: PurchaseSummaryCountAggregateInputType | true;
+    _avg?: PurchaseSummaryAvgAggregateInputType;
+    _sum?: PurchaseSummarySumAggregateInputType;
+    _min?: PurchaseSummaryMinAggregateInputType;
+    _max?: PurchaseSummaryMaxAggregateInputType;
+};
+export type PurchaseSummaryGroupByOutputType = {
+    purchaseSummaryId: string;
+    totalPurchased: number;
+    changePercentage: number | null;
+    date: Date;
+    _count: PurchaseSummaryCountAggregateOutputType | null;
+    _avg: PurchaseSummaryAvgAggregateOutputType | null;
+    _sum: PurchaseSummarySumAggregateOutputType | null;
+    _min: PurchaseSummaryMinAggregateOutputType | null;
+    _max: PurchaseSummaryMaxAggregateOutputType | null;
+};
+export type GetPurchaseSummaryGroupByPayload<T extends PurchaseSummaryGroupByArgs> = Prisma.PrismaPromise<Array<Prisma.PickEnumerable<PurchaseSummaryGroupByOutputType, T['by']> & {
+    [P in ((keyof T) & (keyof PurchaseSummaryGroupByOutputType))]: P extends '_count' ? T[P] extends boolean ? number : Prisma.GetScalarType<T[P], PurchaseSummaryGroupByOutputType[P]> : Prisma.GetScalarType<T[P], PurchaseSummaryGroupByOutputType[P]>;
+}>>;
+export type PurchaseSummaryWhereInput = {
+    AND?: Prisma.PurchaseSummaryWhereInput | Prisma.PurchaseSummaryWhereInput[];
+    OR?: Prisma.PurchaseSummaryWhereInput[];
+    NOT?: Prisma.PurchaseSummaryWhereInput | Prisma.PurchaseSummaryWhereInput[];
+    purchaseSummaryId?: Prisma.StringFilter<"PurchaseSummary"> | string;
+    totalPurchased?: Prisma.FloatFilter<"PurchaseSummary"> | number;
+    changePercentage?: Prisma.FloatNullableFilter<"PurchaseSummary"> | number | null;
+    date?: Prisma.DateTimeFilter<"PurchaseSummary"> | Date | string;
+};
+export type PurchaseSummaryOrderByWithRelationInput = {
+    purchaseSummaryId?: Prisma.SortOrder;
+    totalPurchased?: Prisma.SortOrder;
+    changePercentage?: Prisma.SortOrderInput | Prisma.SortOrder;
+    date?: Prisma.SortOrder;
+};
+export type PurchaseSummaryWhereUniqueInput = Prisma.AtLeast<{
+    purchaseSummaryId?: string;
+    AND?: Prisma.PurchaseSummaryWhereInput | Prisma.PurchaseSummaryWhereInput[];
+    OR?: Prisma.PurchaseSummaryWhereInput[];
+    NOT?: Prisma.PurchaseSummaryWhereInput | Prisma.PurchaseSummaryWhereInput[];
+    totalPurchased?: Prisma.FloatFilter<"PurchaseSummary"> | number;
+    changePercentage?: Prisma.FloatNullableFilter<"PurchaseSummary"> | number | null;
+    date?: Prisma.DateTimeFilter<"PurchaseSummary"> | Date | string;
+}, "purchaseSummaryId">;
+export type PurchaseSummaryOrderByWithAggregationInput = {
+    purchaseSummaryId?: Prisma.SortOrder;
+    totalPurchased?: Prisma.SortOrder;
+    changePercentage?: Prisma.SortOrderInput | Prisma.SortOrder;
+    date?: Prisma.SortOrder;
+    _count?: Prisma.PurchaseSummaryCountOrderByAggregateInput;
+    _avg?: Prisma.PurchaseSummaryAvgOrderByAggregateInput;
+    _max?: Prisma.PurchaseSummaryMaxOrderByAggregateInput;
+    _min?: Prisma.PurchaseSummaryMinOrderByAggregateInput;
+    _sum?: Prisma.PurchaseSummarySumOrderByAggregateInput;
+};
+export type PurchaseSummaryScalarWhereWithAggregatesInput = {
+    AND?: Prisma.PurchaseSummaryScalarWhereWithAggregatesInput | Prisma.PurchaseSummaryScalarWhereWithAggregatesInput[];
+    OR?: Prisma.PurchaseSummaryScalarWhereWithAggregatesInput[];
+    NOT?: Prisma.PurchaseSummaryScalarWhereWithAggregatesInput | Prisma.PurchaseSummaryScalarWhereWithAggregatesInput[];
+    purchaseSummaryId?: Prisma.StringWithAggregatesFilter<"PurchaseSummary"> | string;
+    totalPurchased?: Prisma.FloatWithAggregatesFilter<"PurchaseSummary"> | number;
+    changePercentage?: Prisma.FloatNullableWithAggregatesFilter<"PurchaseSummary"> | number | null;
+    date?: Prisma.DateTimeWithAggregatesFilter<"PurchaseSummary"> | Date | string;
+};
+export type PurchaseSummaryCreateInput = {
+    purchaseSummaryId: string;
+    totalPurchased: number;
+    changePercentage?: number | null;
+    date: Date | string;
+};
+export type PurchaseSummaryUncheckedCreateInput = {
+    purchaseSummaryId: string;
+    totalPurchased: number;
+    changePercentage?: number | null;
+    date: Date | string;
+};
+export type PurchaseSummaryUpdateInput = {
+    purchaseSummaryId?: Prisma.StringFieldUpdateOperationsInput | string;
+    totalPurchased?: Prisma.FloatFieldUpdateOperationsInput | number;
+    changePercentage?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type PurchaseSummaryUncheckedUpdateInput = {
+    purchaseSummaryId?: Prisma.StringFieldUpdateOperationsInput | string;
+    totalPurchased?: Prisma.FloatFieldUpdateOperationsInput | number;
+    changePercentage?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type PurchaseSummaryCreateManyInput = {
+    purchaseSummaryId: string;
+    totalPurchased: number;
+    changePercentage?: number | null;
+    date: Date | string;
+};
+export type PurchaseSummaryUpdateManyMutationInput = {
+    purchaseSummaryId?: Prisma.StringFieldUpdateOperationsInput | string;
+    totalPurchased?: Prisma.FloatFieldUpdateOperationsInput | number;
+    changePercentage?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type PurchaseSummaryUncheckedUpdateManyInput = {
+    purchaseSummaryId?: Prisma.StringFieldUpdateOperationsInput | string;
+    totalPurchased?: Prisma.FloatFieldUpdateOperationsInput | number;
+    changePercentage?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null;
+    date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+export type PurchaseSummaryCountOrderByAggregateInput = {
+    purchaseSummaryId?: Prisma.SortOrder;
+    totalPurchased?: Prisma.SortOrder;
+    changePercentage?: Prisma.SortOrder;
+    date?: Prisma.SortOrder;
+};
+export type PurchaseSummaryAvgOrderByAggregateInput = {
+    totalPurchased?: Prisma.SortOrder;
+    changePercentage?: Prisma.SortOrder;
+};
+export type PurchaseSummaryMaxOrderByAggregateInput = {
+    purchaseSummaryId?: Prisma.SortOrder;
+    totalPurchased?: Prisma.SortOrder;
+    changePercentage?: Prisma.SortOrder;
+    date?: Prisma.SortOrder;
+};
+export type PurchaseSummaryMinOrderByAggregateInput = {
+    purchaseSummaryId?: Prisma.SortOrder;
+    totalPurchased?: Prisma.SortOrder;
+    changePercentage?: Prisma.SortOrder;
+    date?: Prisma.SortOrder;
+};
+export type PurchaseSummarySumOrderByAggregateInput = {
+    totalPurchased?: Prisma.SortOrder;
+    changePercentage?: Prisma.SortOrder;
+};
+export type PurchaseSummarySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    purchaseSummaryId?: boolean;
+    totalPurchased?: boolean;
+    changePercentage?: boolean;
+    date?: boolean;
+}, ExtArgs["result"]["purchaseSummary"]>;
+export type PurchaseSummarySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    purchaseSummaryId?: boolean;
+    totalPurchased?: boolean;
+    changePercentage?: boolean;
+    date?: boolean;
+}, ExtArgs["result"]["purchaseSummary"]>;
+export type PurchaseSummarySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+    purchaseSummaryId?: boolean;
+    totalPurchased?: boolean;
+    changePercentage?: boolean;
+    date?: boolean;
+}, ExtArgs["result"]["purchaseSummary"]>;
+export type PurchaseSummarySelectScalar = {
+    purchaseSummaryId?: boolean;
+    totalPurchased?: boolean;
+    changePercentage?: boolean;
+    date?: boolean;
+};
+export type PurchaseSummaryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"purchaseSummaryId" | "totalPurchased" | "changePercentage" | "date", ExtArgs["result"]["purchaseSummary"]>;
+export type $PurchaseSummaryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    name: "PurchaseSummary";
+    objects: {};
+    scalars: runtime.Types.Extensions.GetPayloadResult<{
+        purchaseSummaryId: string;
+        totalPurchased: number;
+        changePercentage: number | null;
+        date: Date;
+    }, ExtArgs["result"]["purchaseSummary"]>;
+    composites: {};
+};
+export type PurchaseSummaryGetPayload<S extends boolean | null | undefined | PurchaseSummaryDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload, S>;
+export type PurchaseSummaryCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = Omit<PurchaseSummaryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: PurchaseSummaryCountAggregateInputType | true;
+};
+export interface PurchaseSummaryDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: {
+        types: Prisma.TypeMap<ExtArgs>['model']['PurchaseSummary'];
+        meta: {
+            name: 'PurchaseSummary';
+        };
+    };
+    /**
+     * Find zero or one PurchaseSummary that matches the filter.
+     * @param {PurchaseSummaryFindUniqueArgs} args - Arguments to find a PurchaseSummary
+     * @example
+     * // Get one PurchaseSummary
+     * const purchaseSummary = await prisma.purchaseSummary.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PurchaseSummaryFindUniqueArgs>(args: Prisma.SelectSubset<T, PurchaseSummaryFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PurchaseSummaryClient<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find one PurchaseSummary that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PurchaseSummaryFindUniqueOrThrowArgs} args - Arguments to find a PurchaseSummary
+     * @example
+     * // Get one PurchaseSummary
+     * const purchaseSummary = await prisma.purchaseSummary.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PurchaseSummaryFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PurchaseSummaryFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PurchaseSummaryClient<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first PurchaseSummary that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PurchaseSummaryFindFirstArgs} args - Arguments to find a PurchaseSummary
+     * @example
+     * // Get one PurchaseSummary
+     * const purchaseSummary = await prisma.purchaseSummary.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PurchaseSummaryFindFirstArgs>(args?: Prisma.SelectSubset<T, PurchaseSummaryFindFirstArgs<ExtArgs>>): Prisma.Prisma__PurchaseSummaryClient<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find the first PurchaseSummary that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PurchaseSummaryFindFirstOrThrowArgs} args - Arguments to find a PurchaseSummary
+     * @example
+     * // Get one PurchaseSummary
+     * const purchaseSummary = await prisma.purchaseSummary.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PurchaseSummaryFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PurchaseSummaryFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PurchaseSummaryClient<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Find zero or more PurchaseSummaries that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PurchaseSummaryFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all PurchaseSummaries
+     * const purchaseSummaries = await prisma.purchaseSummary.findMany()
+     *
+     * // Get first 10 PurchaseSummaries
+     * const purchaseSummaries = await prisma.purchaseSummary.findMany({ take: 10 })
+     *
+     * // Only select the `purchaseSummaryId`
+     * const purchaseSummaryWithPurchaseSummaryIdOnly = await prisma.purchaseSummary.findMany({ select: { purchaseSummaryId: true } })
+     *
+     */
+    findMany<T extends PurchaseSummaryFindManyArgs>(args?: Prisma.SelectSubset<T, PurchaseSummaryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>;
+    /**
+     * Create a PurchaseSummary.
+     * @param {PurchaseSummaryCreateArgs} args - Arguments to create a PurchaseSummary.
+     * @example
+     * // Create one PurchaseSummary
+     * const PurchaseSummary = await prisma.purchaseSummary.create({
+     *   data: {
+     *     // ... data to create a PurchaseSummary
+     *   }
+     * })
+     *
+     */
+    create<T extends PurchaseSummaryCreateArgs>(args: Prisma.SelectSubset<T, PurchaseSummaryCreateArgs<ExtArgs>>): Prisma.Prisma__PurchaseSummaryClient<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Create many PurchaseSummaries.
+     * @param {PurchaseSummaryCreateManyArgs} args - Arguments to create many PurchaseSummaries.
+     * @example
+     * // Create many PurchaseSummaries
+     * const purchaseSummary = await prisma.purchaseSummary.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     */
+    createMany<T extends PurchaseSummaryCreateManyArgs>(args?: Prisma.SelectSubset<T, PurchaseSummaryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Create many PurchaseSummaries and returns the data saved in the database.
+     * @param {PurchaseSummaryCreateManyAndReturnArgs} args - Arguments to create many PurchaseSummaries.
+     * @example
+     * // Create many PurchaseSummaries
+     * const purchaseSummary = await prisma.purchaseSummary.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Create many PurchaseSummaries and only return the `purchaseSummaryId`
+     * const purchaseSummaryWithPurchaseSummaryIdOnly = await prisma.purchaseSummary.createManyAndReturn({
+     *   select: { purchaseSummaryId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    createManyAndReturn<T extends PurchaseSummaryCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, PurchaseSummaryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Delete a PurchaseSummary.
+     * @param {PurchaseSummaryDeleteArgs} args - Arguments to delete one PurchaseSummary.
+     * @example
+     * // Delete one PurchaseSummary
+     * const PurchaseSummary = await prisma.purchaseSummary.delete({
+     *   where: {
+     *     // ... filter to delete one PurchaseSummary
+     *   }
+     * })
+     *
+     */
+    delete<T extends PurchaseSummaryDeleteArgs>(args: Prisma.SelectSubset<T, PurchaseSummaryDeleteArgs<ExtArgs>>): Prisma.Prisma__PurchaseSummaryClient<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Update one PurchaseSummary.
+     * @param {PurchaseSummaryUpdateArgs} args - Arguments to update one PurchaseSummary.
+     * @example
+     * // Update one PurchaseSummary
+     * const purchaseSummary = await prisma.purchaseSummary.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    update<T extends PurchaseSummaryUpdateArgs>(args: Prisma.SelectSubset<T, PurchaseSummaryUpdateArgs<ExtArgs>>): Prisma.Prisma__PurchaseSummaryClient<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Delete zero or more PurchaseSummaries.
+     * @param {PurchaseSummaryDeleteManyArgs} args - Arguments to filter PurchaseSummaries to delete.
+     * @example
+     * // Delete a few PurchaseSummaries
+     * const { count } = await prisma.purchaseSummary.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     *
+     */
+    deleteMany<T extends PurchaseSummaryDeleteManyArgs>(args?: Prisma.SelectSubset<T, PurchaseSummaryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more PurchaseSummaries.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PurchaseSummaryUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many PurchaseSummaries
+     * const purchaseSummary = await prisma.purchaseSummary.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     *
+     */
+    updateMany<T extends PurchaseSummaryUpdateManyArgs>(args: Prisma.SelectSubset<T, PurchaseSummaryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>;
+    /**
+     * Update zero or more PurchaseSummaries and returns the data updated in the database.
+     * @param {PurchaseSummaryUpdateManyAndReturnArgs} args - Arguments to update many PurchaseSummaries.
+     * @example
+     * // Update many PurchaseSummaries
+     * const purchaseSummary = await prisma.purchaseSummary.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *
+     * // Update zero or more PurchaseSummaries and only return the `purchaseSummaryId`
+     * const purchaseSummaryWithPurchaseSummaryIdOnly = await prisma.purchaseSummary.updateManyAndReturn({
+     *   select: { purchaseSummaryId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     *
+     */
+    updateManyAndReturn<T extends PurchaseSummaryUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, PurchaseSummaryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>;
+    /**
+     * Create or update one PurchaseSummary.
+     * @param {PurchaseSummaryUpsertArgs} args - Arguments to update or create a PurchaseSummary.
+     * @example
+     * // Update or create a PurchaseSummary
+     * const purchaseSummary = await prisma.purchaseSummary.upsert({
+     *   create: {
+     *     // ... data to create a PurchaseSummary
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the PurchaseSummary we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PurchaseSummaryUpsertArgs>(args: Prisma.SelectSubset<T, PurchaseSummaryUpsertArgs<ExtArgs>>): Prisma.Prisma__PurchaseSummaryClient<runtime.Types.Result.GetResult<Prisma.$PurchaseSummaryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>;
+    /**
+     * Count the number of PurchaseSummaries.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PurchaseSummaryCountArgs} args - Arguments to filter PurchaseSummaries to count.
+     * @example
+     * // Count the number of PurchaseSummaries
+     * const count = await prisma.purchaseSummary.count({
+     *   where: {
+     *     // ... the filter for the PurchaseSummaries we want to count
+     *   }
+     * })
+    **/
+    count<T extends PurchaseSummaryCountArgs>(args?: Prisma.Subset<T, PurchaseSummaryCountArgs>): Prisma.PrismaPromise<T extends runtime.Types.Utils.Record<'select', any> ? T['select'] extends true ? number : Prisma.GetScalarType<T['select'], PurchaseSummaryCountAggregateOutputType> : number>;
+    /**
+     * Allows you to perform aggregations operations on a PurchaseSummary.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PurchaseSummaryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PurchaseSummaryAggregateArgs>(args: Prisma.Subset<T, PurchaseSummaryAggregateArgs>): Prisma.PrismaPromise<GetPurchaseSummaryAggregateType<T>>;
+    /**
+     * Group by PurchaseSummary.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PurchaseSummaryGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     *
+    **/
+    groupBy<T extends PurchaseSummaryGroupByArgs, HasSelectOrTake extends Prisma.Or<Prisma.Extends<'skip', Prisma.Keys<T>>, Prisma.Extends<'take', Prisma.Keys<T>>>, OrderByArg extends Prisma.True extends HasSelectOrTake ? {
+        orderBy: PurchaseSummaryGroupByArgs['orderBy'];
+    } : {
+        orderBy?: PurchaseSummaryGroupByArgs['orderBy'];
+    }, OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>, ByFields extends Prisma.MaybeTupleToUnion<T['by']>, ByValid extends Prisma.Has<ByFields, OrderFields>, HavingFields extends Prisma.GetHavingFields<T['having']>, HavingValid extends Prisma.Has<ByFields, HavingFields>, ByEmpty extends T['by'] extends never[] ? Prisma.True : Prisma.False, InputErrors extends ByEmpty extends Prisma.True ? `Error: "by" must not be empty.` : HavingValid extends Prisma.False ? {
+        [P in HavingFields]: P extends ByFields ? never : P extends string ? `Error: Field "${P}" used in "having" needs to be provided in "by".` : [
+            Error,
+            'Field ',
+            P,
+            ` in "having" needs to be provided in "by"`
+        ];
+    }[HavingFields] : 'take' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "take", you also need to provide "orderBy"' : 'skip' extends Prisma.Keys<T> ? 'orderBy' extends Prisma.Keys<T> ? ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields] : 'Error: If you provide "skip", you also need to provide "orderBy"' : ByValid extends Prisma.True ? {} : {
+        [P in OrderFields]: P extends ByFields ? never : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`;
+    }[OrderFields]>(args: Prisma.SubsetIntersection<T, PurchaseSummaryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPurchaseSummaryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>;
+    /**
+     * Fields of the PurchaseSummary model
+     */
+    readonly fields: PurchaseSummaryFieldRefs;
+}
+/**
+ * The delegate class that acts as a "Promise-like" for PurchaseSummary.
+ * Why is this prefixed with `Prisma__`?
+ * Because we want to prevent naming conflicts as mentioned in
+ * https://github.com/prisma/prisma-client-js/issues/707
+ */
+export interface Prisma__PurchaseSummaryClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise";
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): runtime.Types.Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): runtime.Types.Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): runtime.Types.Utils.JsPromise<T>;
+}
+/**
+ * Fields of the PurchaseSummary model
+ */
+export interface PurchaseSummaryFieldRefs {
+    readonly purchaseSummaryId: Prisma.FieldRef<"PurchaseSummary", 'String'>;
+    readonly totalPurchased: Prisma.FieldRef<"PurchaseSummary", 'Float'>;
+    readonly changePercentage: Prisma.FieldRef<"PurchaseSummary", 'Float'>;
+    readonly date: Prisma.FieldRef<"PurchaseSummary", 'DateTime'>;
+}
+/**
+ * PurchaseSummary findUnique
+ */
+export type PurchaseSummaryFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * Filter, which PurchaseSummary to fetch.
+     */
+    where: Prisma.PurchaseSummaryWhereUniqueInput;
+};
+/**
+ * PurchaseSummary findUniqueOrThrow
+ */
+export type PurchaseSummaryFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * Filter, which PurchaseSummary to fetch.
+     */
+    where: Prisma.PurchaseSummaryWhereUniqueInput;
+};
+/**
+ * PurchaseSummary findFirst
+ */
+export type PurchaseSummaryFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * Filter, which PurchaseSummary to fetch.
+     */
+    where?: Prisma.PurchaseSummaryWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PurchaseSummaries to fetch.
+     */
+    orderBy?: Prisma.PurchaseSummaryOrderByWithRelationInput | Prisma.PurchaseSummaryOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for PurchaseSummaries.
+     */
+    cursor?: Prisma.PurchaseSummaryWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PurchaseSummaries from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PurchaseSummaries.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of PurchaseSummaries.
+     */
+    distinct?: Prisma.PurchaseSummaryScalarFieldEnum | Prisma.PurchaseSummaryScalarFieldEnum[];
+};
+/**
+ * PurchaseSummary findFirstOrThrow
+ */
+export type PurchaseSummaryFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * Filter, which PurchaseSummary to fetch.
+     */
+    where?: Prisma.PurchaseSummaryWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PurchaseSummaries to fetch.
+     */
+    orderBy?: Prisma.PurchaseSummaryOrderByWithRelationInput | Prisma.PurchaseSummaryOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for searching for PurchaseSummaries.
+     */
+    cursor?: Prisma.PurchaseSummaryWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PurchaseSummaries from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PurchaseSummaries.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of PurchaseSummaries.
+     */
+    distinct?: Prisma.PurchaseSummaryScalarFieldEnum | Prisma.PurchaseSummaryScalarFieldEnum[];
+};
+/**
+ * PurchaseSummary findMany
+ */
+export type PurchaseSummaryFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * Filter, which PurchaseSummaries to fetch.
+     */
+    where?: Prisma.PurchaseSummaryWhereInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     *
+     * Determine the order of PurchaseSummaries to fetch.
+     */
+    orderBy?: Prisma.PurchaseSummaryOrderByWithRelationInput | Prisma.PurchaseSummaryOrderByWithRelationInput[];
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     *
+     * Sets the position for listing PurchaseSummaries.
+     */
+    cursor?: Prisma.PurchaseSummaryWhereUniqueInput;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Take `±n` PurchaseSummaries from the position of the cursor.
+     */
+    take?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     *
+     * Skip the first `n` PurchaseSummaries.
+     */
+    skip?: number;
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     *
+     * Filter by unique combinations of PurchaseSummaries.
+     */
+    distinct?: Prisma.PurchaseSummaryScalarFieldEnum | Prisma.PurchaseSummaryScalarFieldEnum[];
+};
+/**
+ * PurchaseSummary create
+ */
+export type PurchaseSummaryCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * The data needed to create a PurchaseSummary.
+     */
+    data: Prisma.XOR<Prisma.PurchaseSummaryCreateInput, Prisma.PurchaseSummaryUncheckedCreateInput>;
+};
+/**
+ * PurchaseSummary createMany
+ */
+export type PurchaseSummaryCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many PurchaseSummaries.
+     */
+    data: Prisma.PurchaseSummaryCreateManyInput | Prisma.PurchaseSummaryCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * PurchaseSummary createManyAndReturn
+ */
+export type PurchaseSummaryCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelectCreateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * The data used to create many PurchaseSummaries.
+     */
+    data: Prisma.PurchaseSummaryCreateManyInput | Prisma.PurchaseSummaryCreateManyInput[];
+    skipDuplicates?: boolean;
+};
+/**
+ * PurchaseSummary update
+ */
+export type PurchaseSummaryUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * The data needed to update a PurchaseSummary.
+     */
+    data: Prisma.XOR<Prisma.PurchaseSummaryUpdateInput, Prisma.PurchaseSummaryUncheckedUpdateInput>;
+    /**
+     * Choose, which PurchaseSummary to update.
+     */
+    where: Prisma.PurchaseSummaryWhereUniqueInput;
+};
+/**
+ * PurchaseSummary updateMany
+ */
+export type PurchaseSummaryUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * The data used to update PurchaseSummaries.
+     */
+    data: Prisma.XOR<Prisma.PurchaseSummaryUpdateManyMutationInput, Prisma.PurchaseSummaryUncheckedUpdateManyInput>;
+    /**
+     * Filter which PurchaseSummaries to update
+     */
+    where?: Prisma.PurchaseSummaryWhereInput;
+    /**
+     * Limit how many PurchaseSummaries to update.
+     */
+    limit?: number;
+};
+/**
+ * PurchaseSummary updateManyAndReturn
+ */
+export type PurchaseSummaryUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelectUpdateManyAndReturn<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * The data used to update PurchaseSummaries.
+     */
+    data: Prisma.XOR<Prisma.PurchaseSummaryUpdateManyMutationInput, Prisma.PurchaseSummaryUncheckedUpdateManyInput>;
+    /**
+     * Filter which PurchaseSummaries to update
+     */
+    where?: Prisma.PurchaseSummaryWhereInput;
+    /**
+     * Limit how many PurchaseSummaries to update.
+     */
+    limit?: number;
+};
+/**
+ * PurchaseSummary upsert
+ */
+export type PurchaseSummaryUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * The filter to search for the PurchaseSummary to update in case it exists.
+     */
+    where: Prisma.PurchaseSummaryWhereUniqueInput;
+    /**
+     * In case the PurchaseSummary found by the `where` argument doesn't exist, create a new PurchaseSummary with this data.
+     */
+    create: Prisma.XOR<Prisma.PurchaseSummaryCreateInput, Prisma.PurchaseSummaryUncheckedCreateInput>;
+    /**
+     * In case the PurchaseSummary was found with the provided `where` argument, update it with this data.
+     */
+    update: Prisma.XOR<Prisma.PurchaseSummaryUpdateInput, Prisma.PurchaseSummaryUncheckedUpdateInput>;
+};
+/**
+ * PurchaseSummary delete
+ */
+export type PurchaseSummaryDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+    /**
+     * Filter which PurchaseSummary to delete.
+     */
+    where: Prisma.PurchaseSummaryWhereUniqueInput;
+};
+/**
+ * PurchaseSummary deleteMany
+ */
+export type PurchaseSummaryDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Filter which PurchaseSummaries to delete
+     */
+    where?: Prisma.PurchaseSummaryWhereInput;
+    /**
+     * Limit how many PurchaseSummaries to delete.
+     */
+    limit?: number;
+};
+/**
+ * PurchaseSummary without action
+ */
+export type PurchaseSummaryDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PurchaseSummary
+     */
+    select?: Prisma.PurchaseSummarySelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the PurchaseSummary
+     */
+    omit?: Prisma.PurchaseSummaryOmit<ExtArgs> | null;
+};
+//# sourceMappingURL=PurchaseSummary.d.ts.map
